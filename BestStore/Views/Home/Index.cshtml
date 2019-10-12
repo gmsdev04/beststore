@@ -1,0 +1,203 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/aos.css">
+    <link rel="stylesheet" href="~/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>BestStore</span></a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <partial name="_CookieConsentPartial" />
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="index.html#services-section" class="nav-link"><span>Sobre</span></a></li>
+                    <li class="nav-item"><a href="index.html#projects-section" class="nav-link"><span>Funcionalidades</span></a></li>
+                    <li class="nav-item"><a href="index.htmlabout-section" class="nav-link"><span>Planos</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact-section" class="nav-link"><span>Contato</span></a></li>
+                    <li class="nav-item">@Html.ActionLink("Login", "Login", "Home", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-3 bread">Suas vendas em tempo real</h1>
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#modalRegisterForm">Teste Gratis!</button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ftco-animate">
+                    <h2 class="mb-3 text-center">Controle do seu negócio em um só lugar</h2>
+                    <p class="textoIndex">
+                        Nosso sistema proporciona um controle total do seu negócio através de uma plataforma web de fácil uso e segura. Saiba o que está acontecendo em tempo real nas suas lojas, controle de estoques, quantidades de vendas diárias, mensal e muitas outras funcionalidades que facilitarão a sua gestão.
+                        Experimente a nova versão GRATUITA e tenha certeza da qualidate. É Gratis!
+                    </p>
+                    <p>
+                        <img src="images/image_3.jpg" alt="" class="centralizarImagem">
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </section> <!-- .section -->
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Sobre BestStore</h2>
+                        <p>Soluções para o seu comércio com baixo custo e alta qualidade, fazendo a diferença sendo diferente!</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Planos</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Free</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Básico</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Avançado</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Premium</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Funcionalidades</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Termos de Uso</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Políticas e Privacidade</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Manual</a></li>
+                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Requisitos Mínimos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Perguntas?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+55 11 97036-1998</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">comercial@beststore.com.br</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Cadastre-se</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <h5 id="msgRegister" class="text-center">Estamos quase lá!</h5>
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" id="nome" class="form-control validate" placeholder="Nome">
+              
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="email" class="form-control validate" placeholder="E-mail">
+              
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="senha" class="form-control validate" placeholder="Senha">
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-deep-orange" onclick="novoUsuario();">Iniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.animateNumber.min.js"></script>
+    <script src="~/js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="~/js/google-map.js"></script>
+    <script src="~/js/main.js"></script>
+
+</body>
+</html>
