@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace beststore_administrativo.Controllers
+namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

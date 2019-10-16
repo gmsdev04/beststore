@@ -12077,11 +12077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/beststore_administrativo.csproj",
-      "projectName": "beststore_administrativo",
-      "projectPath": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/beststore_administrativo.csproj",
+      "projectUniqueName": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/API.csproj",
+      "projectName": "API",
+      "projectPath": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/API.csproj",
       "packagesPath": "/home/gmsdev/.nuget/packages/",
-      "outputPath": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/obj/",
+      "outputPath": "/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
