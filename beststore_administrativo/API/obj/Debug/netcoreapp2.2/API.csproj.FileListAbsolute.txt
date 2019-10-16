@@ -1,0 +1,14 @@
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/bin/Debug/netcoreapp2.2/API.deps.json
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/bin/Debug/netcoreapp2.2/API.runtimeconfig.json
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/bin/Debug/netcoreapp2.2/API.runtimeconfig.dev.json
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/bin/Debug/netcoreapp2.2/API.dll
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/bin/Debug/netcoreapp2.2/API.pdb
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.csprojAssemblyReference.cache
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.csproj.CoreCompileInputs.cache
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.RazorAssemblyInfo.cache
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.RazorAssemblyInfo.cs
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.AssemblyInfoInputs.cache
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.AssemblyInfo.cs
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.RazorTargetAssemblyInfo.cache
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.dll
+/home/gmsdev/Desktop/git/beststore/beststore_administrativo/API/obj/Debug/netcoreapp2.2/API.pdb
