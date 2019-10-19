@@ -1,9 +1,0 @@
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/bin/Debug/netstandard2.0/MODEL.deps.json
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/bin/Debug/netstandard2.0/MODEL.dll
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/bin/Debug/netstandard2.0/MODEL.pdb
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.csprojAssemblyReference.cache
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.csproj.CoreCompileInputs.cache
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.AssemblyInfoInputs.cache
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.AssemblyInfo.cs
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.dll
-/home/gmsdev/Desktop/git/beststore/beststore_administrativo/MODEL/obj/Debug/netstandard2.0/MODEL.pdb
