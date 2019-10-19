@@ -6,27 +6,30 @@ Este projeto consiste na criação de um sistema de gestão de vendas e produtos
 A arquitetura do sistema é baseada em serviços, mais especificamente RestFull. O sistema deve ser composto por modulos apartados sendo eles :
 
 <h3>Modulos</h3>
-<strong>Os modulos abaixo devem ser granulares e não devem possuir interdependencias e estado local para viabilizar a escalabilidade horizontal</strong>
+<p>O sitema será dividido em dois tipos, projetos de dominios e STS (Security Token Service). Para cada dominio da aplicação
+deverá ser desenvolvido um projeto apartado que manterá os micro serviços operantes de forma granular, o STS ficará responsável pelo gerenciamento dos tokens de consumo dos dominios publicaodos.</p>
 
-</br>
-<table>
-  <tr>
-    <td>Modulo</td>
-    <td>Descrição</td>
-  </tr>
-  <tr>
-    <td>Administrativo</td>
-    <td>Central de administração de produtos, lojas e caixas cadastrados.</td>
-  </tr>
-  <tr>
-    <td>Produção</td>
-    <td>Central de processamento de dados transacionais (Vendas).</td>
-  </tr>
-  <tr>
-    <td>Analytics</td>
-    <td>Central de processamento de dados de análise em tempo real / Indicadores.</td>
-  </tr>
-</table>
+<h3>Dominios</h3>
+
+<ul>
+  <li>pessoas</li>
+  <li>lojas</li>
+  <li>produtos</li>
+  <li>acessos</li>
+  <li>vendas</li>
+  <li>tokens</li>
+</ul>
+
+<h3>Rotas</h3>
+<ul>
+  <li>pessoas/v1/acessos</li>
+  <li>pessoas/v1/</li>
+  <li>lojas/v1/produtos</li>
+  <li>lojas/v1/vendas
+  <li>lojas/v1/</li>
+  <li>sts/v1/tokens</li>
+</ul>
+
 
 <h2>Tecnologias</h2>
 <table>
