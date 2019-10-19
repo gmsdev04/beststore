@@ -1,0 +1,14 @@
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/bin/Debug/netcoreapp2.2/tokens.deps.json
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/bin/Debug/netcoreapp2.2/tokens.runtimeconfig.json
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/bin/Debug/netcoreapp2.2/tokens.runtimeconfig.dev.json
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/bin/Debug/netcoreapp2.2/tokens.dll
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/bin/Debug/netcoreapp2.2/tokens.pdb
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.csprojAssemblyReference.cache
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.csproj.CoreCompileInputs.cache
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.RazorAssemblyInfo.cache
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.RazorAssemblyInfo.cs
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.AssemblyInfoInputs.cache
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.AssemblyInfo.cs
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.RazorTargetAssemblyInfo.cache
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.dll
+/home/gmsdev/Desktop/git/beststore/beststore/tokens/obj/Debug/netcoreapp2.2/tokens.pdb
