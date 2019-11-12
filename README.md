@@ -58,11 +58,11 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   </tr>
   </tr>
     <td>Cloud</td>
-    <td>Azure</td>
+    <td>AWS</td>
   </tr
     </tr>
     <td>Linguagem principal das APIs</td>
-    <td>.NET Core 2.2+ </td>
+    <td>JAVA 8</td>
   </tr>
 </table>
 
