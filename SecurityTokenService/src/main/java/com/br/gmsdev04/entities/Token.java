@@ -1,4 +1,4 @@
-package com.br.gmsdev04.sts.entities;
+package com.br.gmsdev04.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -29,8 +29,12 @@ public class Token {
 		this.token = new StringBuilder()
 				.append(UUID.randomUUID().toString()).append(".")
 				.append(UUID.randomUUID().toString()).append(".")
-				.append(UUID.randomUUID().toString()).append(".").toString();
+				.append(UUID.randomUUID().toString()).toString();
 		this.expireInstant = LocalDateTime.now().plusSeconds(300);
 		this.expiresIn = 300;
+	}
+
+	public boolean isExpired() {
+		return LocalDateTime.now().isAfter(this.expireInstant);
 	}
 }

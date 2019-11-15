@@ -1,4 +1,4 @@
-package com.br.gmsdev04.sts.configuration;
+package com.br.gmsdev04.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -9,10 +9,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.br.gmsdev04</groupId>
-	<artifactId>SecurityTokenService</artifactId>
+	<artifactId>API_Model</artifactId>
 	<version>1.0.0</version>
-	<name>SecurityTokenService</name>
-	<description>Projeto destinado ao fornecimento de tokens de autenticação de APIS</description>
+	<name>API_Model</name>
+	<description>Projeto modelo para as demais APIS</description>
 
 	<properties>
 		<java.version>1.8</java.version>

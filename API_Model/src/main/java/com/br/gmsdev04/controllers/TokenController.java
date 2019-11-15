@@ -1,4 +1,4 @@
-package com.br.gmsdev04.sts.controllers;
+package com.br.gmsdev04.controllers;
 
 import java.util.Optional;
 
@@ -7,14 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.gmsdev04.commons.ApiRoundTrip;
-import com.br.gmsdev04.sts.entities.Application;
-import com.br.gmsdev04.sts.entities.Token;
-import com.br.gmsdev04.sts.repository.ApplicationRepository;
-import com.br.gmsdev04.sts.repository.TokenRepository;
+import com.br.gmsdev04.entities.Application;
+import com.br.gmsdev04.entities.Token;
+import com.br.gmsdev04.repository.ApplicationRepository;
+import com.br.gmsdev04.repository.TokenRepository;
 
 @RestController()
 public class TokenController {

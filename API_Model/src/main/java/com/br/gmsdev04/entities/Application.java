@@ -1,4 +1,4 @@
-package com.br.gmsdev04.sts.entities;
+package com.br.gmsdev04.entities;
 
 import java.time.LocalDateTime;
 
