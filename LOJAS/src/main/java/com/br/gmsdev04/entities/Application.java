@@ -1,28 +1,33 @@
 package com.br.gmsdev04.entities;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 import lombok.Data;
 
-@Document("application")
+@Table("applications")
 @Data
 public class Application {
 	
 	//ATRIBUTTES
-	@Id
-	private ObjectId clientId;
-	private ObjectId clientSecret;
+	@PrimaryKey("client_id")
+	private UUID clientId;
+	@Column("client_secret")
+	private UUID clientSecret;
+	@Column("instante_criacao")
 	private LocalDateTime instanteCriacao;
-	private boolean isAtivo;
+	@Column("ativo")
+	private boolean ativo;
 	
 	public Application() {
-		this.clientId = ObjectId.get();
-		this.clientSecret = ObjectId.get();
+		this.clientId = UUID.randomUUID();
+		this.clientSecret = UUID.randomUUID();
 		this.instanteCriacao = LocalDateTime.now();
-		this.isAtivo = true;
+		this.ativo = true;
 	}
 }

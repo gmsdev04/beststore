@@ -29,7 +29,7 @@ public class Token {
 		this.token = new StringBuilder()
 				.append(UUID.randomUUID().toString()).append(".")
 				.append(UUID.randomUUID().toString()).append(".")
-				.append(UUID.randomUUID().toString()).toString();
+				.append(UUID.randomUUID().toString()).append(".").toString();
 		this.expireInstant = LocalDateTime.now().plusSeconds(300);
 		this.expiresIn = 300;
 	}

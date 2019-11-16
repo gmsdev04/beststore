@@ -17,8 +17,8 @@ import org.springframework.web.filter.GenericFilterBean;
 import com.br.gmsdev04.entities.Token;
 import com.br.gmsdev04.repository.TokenRepository;
 
-@Component
-public class StsFilter extends GenericFilterBean {
+
+public class RequestAuthorizationFilter extends GenericFilterBean {
 
 	@Autowired
 	private TokenRepository tokens;

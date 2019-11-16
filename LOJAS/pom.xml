@@ -12,7 +12,7 @@
 	<artifactId>LOJAS</artifactId>
 	<version>1.0.0</version>
 	<name>LOJAS</name>
-	<description>Projeto web API do dominio funcional de Lojas</description>
+	<description>Projeto destinado a manipulação de dados relacionados ao dominio funcional Lojas.'</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -35,15 +35,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -51,6 +42,10 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-cassandra</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,9 +1,11 @@
 package com.br.gmsdev04.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.UUID;
+
+import org.springframework.data.cassandra.repository.CassandraRepository;
 
 import com.br.gmsdev04.entities.Application;
 
-public interface ApplicationRepository extends MongoRepository<Application, String>{
+public interface ApplicationRepository extends CassandraRepository<Application, UUID>{
 
 }

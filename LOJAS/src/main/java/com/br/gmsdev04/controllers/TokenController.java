@@ -1,10 +1,12 @@
 package com.br.gmsdev04.controllers;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,13 +28,13 @@ public class TokenController {
 	
 	@PostMapping("/sts/v1/tokens")
 	public ResponseEntity<ApiRoundTrip> onPost(
-			@RequestHeader("client_id") String clientId,
-			@RequestHeader("client_secret") String clientSecret,
+			@RequestHeader("client_id") UUID clientId,
+			@RequestHeader("client_secret") UUID clientSecret,
 			@RequestHeader("grant_type") String grantType
 			)
 	{
-		if( (clientId == null     || clientId.isEmpty())	 ||
-		    (clientSecret == null || clientSecret.isEmpty()) ||
+		if( (clientId == null )	 ||
+		    (clientSecret == null) ||
 		    (grantType == null    || grantType.isEmpty()) 	
 		  )
 			return ResponseEntity.badRequest().body(new ApiRoundTrip("cliend_id, client_secret and grant_type can not be null or empty"));
@@ -44,16 +46,15 @@ public class TokenController {
 			if(apl.isPresent()) {
 				Application application = apl.get();
 				
-				if(application.getClientSecret().toHexString().equals(clientSecret)) {
+				if(application.getClientSecret().equals(clientSecret)) {
 					Token token = new Token();
 					
 					tokens.save(token);
 					
 					return ResponseEntity.created(null).body(new ApiRoundTrip("Token gerado com sucesso", token));
 				}
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 			}
-			
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		}else if (grantType.equals("refresh_token")) 
 		{
 			
