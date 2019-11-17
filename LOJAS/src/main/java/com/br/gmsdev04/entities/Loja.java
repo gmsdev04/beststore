@@ -17,7 +17,7 @@ import lombok.Data;
 @Data()
 @Table("lojas")
 public class Loja {
-
+	
 	@PrimaryKey("id")
 	private UUID id;
 	private String nome;
@@ -31,4 +31,9 @@ public class Loja {
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
 	private LocalDateTime ultimaAtualizacao;
+
+	public Loja() {
+		this.id = UUID.randomUUID();
+		this.instanteCriacao = LocalDateTime.now();
+	}
 }

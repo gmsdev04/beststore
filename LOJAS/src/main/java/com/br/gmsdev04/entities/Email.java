@@ -22,4 +22,9 @@ public class Email {
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
 	private LocalDateTime ultimaAtualizacao;
+	
+	public Email() {
+		this.id = UUID.randomUUID();
+		this.instanteCriacao = LocalDateTime.now();
+	}
 }

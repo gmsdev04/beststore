@@ -31,9 +31,14 @@ public class Endereco {
 	@Column("numero")
 	private int numero;
 	@Column("cep")
-	private int cep;
+	private String cep;
 	@Column("instante_criacao")
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
-	private String ultimaAtualizacao;
+	private LocalDateTime ultimaAtualizacao;
+	
+	public Endereco() {
+		this.id = UUID.randomUUID();
+		this.instanteCriacao=LocalDateTime.now();
+	}
 }

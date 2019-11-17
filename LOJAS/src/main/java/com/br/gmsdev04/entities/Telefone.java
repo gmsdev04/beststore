@@ -27,4 +27,9 @@ public class Telefone {
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
 	private LocalDateTime ultimaAtualizacao;
+	
+	public Telefone() {
+		this.id = UUID.randomUUID();
+		this.instanteCriacao = LocalDateTime.now();
+	}
 }

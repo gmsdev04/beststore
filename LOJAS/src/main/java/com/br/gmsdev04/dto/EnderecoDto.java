@@ -6,6 +6,8 @@ import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -31,17 +33,14 @@ public class EnderecoDto {
 	private String cidade;
 	@JsonProperty("municipio")
 	private String municipio;
-	@JsonProperty("uf")
-	@NotNull(message="O endereço deve conter UF")
+	@JsonProperty("uf") @NotNull(message="O endereço deve conter UF")
 	private String uf;
 	@JsonProperty("complemento")
 	private String complemento;
-	@JsonProperty("numero")
-	@NotNull(message="O endereço deve conter um número")
+	@JsonProperty("numero") @Range(min=1,message="O endereço deve conter um número")
 	private int numero;
-	@NotNull(message="O endereço deve conter um cep")
-	@JsonProperty("cep")
-	private int cep;
+	@NotNull(message="O endereço deve conter um cep") @JsonProperty("cep")
+	private String cep;
 	@JsonProperty("instante_criacao")
 	private LocalDateTime instanteCriacao;
 	@JsonProperty("ultima_atualizacao")
