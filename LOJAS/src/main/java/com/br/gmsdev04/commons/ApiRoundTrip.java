@@ -1,13 +1,21 @@
 package com.br.gmsdev04.commons;
 
-public class ApiRoundTrip {
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+
+@Data()
+public class ApiRoundTrip<T> {
 	
 	//ATRIBUTOS
 	private String message;
-	private Object data;
+	@Valid()
+	@NotNull(message="objeto data não pode ser vazio.")
+	private T data;
 	
 	//CONSTRUTORES
-	public ApiRoundTrip(String message, Object data) {
+	public ApiRoundTrip(String message, T data) {
 		super();
 		this.message = message;
 		this.data = data;
@@ -17,19 +25,5 @@ public class ApiRoundTrip {
 		super();
 		this.message = message;
 	}	
-	
-	//GETTERS AND SETTERS
-	public String getMessage() {
-		return message;
-	}
-	
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public Object getData() {
-		return data;
-	}
-	public void setData(Object data) {
-		this.data = data;
-	}
+
 }

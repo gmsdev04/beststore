@@ -8,8 +8,8 @@ import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import lombok.Data;
 
-@UserDefinedType("endereco")
 @Data()
+@UserDefinedType("endereco")
 public class Endereco {	
 	
 	@Column("id")
@@ -30,6 +30,8 @@ public class Endereco {
 	private String complemento;
 	@Column("numero")
 	private int numero;
+	@Column("cep")
+	private int cep;
 	@Column("instante_criacao")
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
