@@ -36,9 +36,6 @@ public class LojasController {
 	@Autowired
 	private ObjectMapper mapper;
 	
-	@Autowired
-	private Validator validator;
-	
 	@PostMapping("/apis/v1/lojas")
 	public ResponseEntity<ApiRoundTrip<LojaDto>> onPost(@Valid() @RequestBody() ApiRoundTrip<LojaDto> request) {
 
@@ -66,27 +63,6 @@ public class LojasController {
 				LojaDto dto = mapper.convertValue(loja,LojaDto.class);
 				
 				return ResponseEntity.ok().body(new ApiRoundTrip<>("Loja encontrada com sucesso",dto)); 
-			}
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiRoundTrip<>("Recurso não encontrado"));
-		}catch(Exception e) {
-			LOGGER.error("Falha ao executar post loja message -> "+e.getMessage());
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiRoundTrip<>("Falha ao processar solicitação"));
-		}
-	}
-	
-	@PatchMapping("/apis/v1/lojas/{id}")
-	public ResponseEntity<ApiRoundTrip<LojaDto>> onPatch(@PathVariable("id") UUID id,@RequestBody ApiRoundTrip<Object> request){
-		try {
-			
-			Optional<Loja> lojaDb = lojas.findById(id);
-			
-			if(lojaDb.isPresent()) {
-				ObjectReader reader = mapper.reader();
-				reader.withValueToUpdate(lojaDb);
-				reader.readValue(request.getData().toString());
-				
-				
-				
 			}
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiRoundTrip<>("Recurso não encontrado"));
 		}catch(Exception e) {

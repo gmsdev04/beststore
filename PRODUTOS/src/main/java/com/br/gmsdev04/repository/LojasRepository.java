@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 
-import com.br.gmsdev04.entities.Application;
+import com.br.gmsdev04.entities.Loja;
 
-public interface ApplicationRepository extends CassandraRepository<Application, UUID>{
+public interface LojasRepository extends CassandraRepository<Loja,UUID> {
 
 }

@@ -9,10 +9,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.br.gmsdev04</groupId>
-	<artifactId>API_Model</artifactId>
+	<artifactId>PRODUTOS</artifactId>
 	<version>1.0.0</version>
-	<name>API_Model</name>
-	<description>Projeto modelo para as demais APIS</description>
+	<name>PRODUTOS</name>
+	<description>Projeto destinado a manipulação de dados relacionados ao dominio funcional Produtos.'</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -45,6 +45,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-cassandra</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 		<dependency>
