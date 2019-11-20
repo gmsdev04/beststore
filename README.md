@@ -47,7 +47,7 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   </tr>
   <tr>
     <td>Banco de dados</td>
-    <td>MongoDB</td>
+    <td>CassandraDB</td>
   </tr>
     <td>Container</td>
     <td>Docker</td>
@@ -66,7 +66,92 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   </tr>
 </table>
 
+<h3>Release Description</h3>
+ - Ver em milestone da Release 1.0.0
+ 
+<h3>Scripts Banco de dados</h3>
 
+<h5>Keyspace Geral</h5>
+CREATE KEYSPACE beststore WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': '3'}  AND durable_writes = true;
+
+<h5>Tabelas e UDTs</h5>
+
+CREATE TYPE beststore.email (
+    id uuid,
+    endereco text,
+    principal boolean,
+    instante_criacao timestamp,
+    ultima_atualizacao timestamp
+);
+
+CREATE TYPE beststore.endereco (
+    id uuid,
+    logradouro text,
+    pais text,
+    estado text,
+    cidade text,
+    municipio text,
+    uf text,
+    complemento text,
+    numero int,
+    cep text,
+    instante_criacao timestamp,
+    ultima_atualizacao timestamp
+);
+
+CREATE TYPE beststore.telefone (
+    id uuid,
+    numero int,
+    ddd int,
+    ddi int,
+    principal boolean,
+    tipo int,
+    instante_criacao timestamp,
+    ultima_atualizacao timestamp
+);
+
+CREATE TABLE beststore.applications (
+    client_id uuid PRIMARY KEY,
+    ativo boolean,
+    client_secret uuid,
+    instante_criacao timestamp
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+CREATE TABLE beststore.lojas (
+    id uuid PRIMARY KEY,
+    emails set<frozen<email>>,
+    endereco endereco,
+    instante_criacao timestamp,
+    nome text,
+    telefones set<frozen<telefone>>,
+    ultima_atualizacao timestamp
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
 
 
 @Author gmsdev04
