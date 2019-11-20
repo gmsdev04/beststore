@@ -18,16 +18,16 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   <li>acessos</li>
   <li>vendas</li>
   <li>tokens</li>
+  <li>caixas</li>
 </ul>
 
 <h3>Rotas</h3>
 <ul>
-  <li>pessoas/v1/acessos</li>
-  <li>pessoas/v1/</li>
-  <li>lojas/v1/produtos</li>
-  <li>lojas/v1/vendas
-  <li>lojas/v1/</li>
-  <li>sts/v1/tokens</li>
+  <li>/apis/v1/lojas</li> - POST
+  <li>/apis/v1/lojas/{id_loja}</li> - GET, PATCH
+  <li>/apis/v1/lojas/{id_loja}/produtos</li> - GET, POST
+  <li>/apis/v1/lojas/{id_loja}/produtos/{id_produto}</li> - GET, PATCH
+  <li>/apis/v1/tokens</li> - POST
 </ul>
 
 
