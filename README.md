@@ -1,6 +1,6 @@
 <h1>Iniciativa BestStore</h1>
 <p>
-Este projeto consiste na criação de um sistema de gestão de vendas e produtos gratuito com o intuito da obtenção de dados de valores de produtos e localização dos mesmos. </p>
+Este projeto consiste na criação de um sistema de gestão de vendas e produtos gratuito com o intuito da obtenção de dados de valores de produtos e localização dos mesmos. Obter uma rede social de busca de produtos e divulgações como um jornal virtual </p>
 
 <h2>Arquitetura</h2>
 A arquitetura do sistema é baseada em serviços, mais especificamente RestFull. O sistema deve ser composto por modulos apartados sendo eles :
