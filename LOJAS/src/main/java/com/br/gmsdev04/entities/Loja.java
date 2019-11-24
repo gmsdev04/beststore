@@ -27,11 +27,12 @@ public class Loja {
 	private Set<Email> emails;
 	@CassandraType(type = DataType.Name.UDT, userTypeName = "telefone") 
 	private Set<Telefone> telefones;
+	@CassandraType(type = DataType.Name.UDT, userTypeName = "caixa") 	
+	private Set<Caixa> caixas;
 	@Column("instante_criacao")
 	private LocalDateTime instanteCriacao;
 	@Column("ultima_atualizacao")
 	private LocalDateTime ultimaAtualizacao;
-
 	public Loja() {
 		this.id = UUID.randomUUID();
 		this.instanteCriacao = LocalDateTime.now();

@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.Data;
 
@@ -33,9 +34,10 @@ public class LojaDto {
 	@JsonProperty("telefones") 
 	@Valid()
 	private Set<TelefoneDto> telefones;
+	@JsonProperty(value = "caixas",access=Access.READ_WRITE)
+	private Set<CaixaDto> caixas;
 	@JsonProperty("instante_criacao")
 	private LocalDateTime instanteCriacao;
 	@JsonProperty("ultima_atualizacao")
 	private LocalDateTime ultimaAtualizacao;
-
 }
