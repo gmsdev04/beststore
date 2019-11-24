@@ -23,11 +23,15 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
 
 <h3>Rotas</h3>
 <ul>
-  <li>/apis/v1/lojas (POST)</li> 
-  <li>/apis/v1/lojas/{id_loja} (GET, PATCH)</li>
-  <li>/apis/v1/lojas/{id_loja}/produtos (GET, POST)</li>
-  <li>/apis/v1/lojas/{id_loja}/produtos/{id_produto} (GET, PATCH)</li>
-  <li>/apis/v1/tokens (POST)</li>
+  <li>/apis/v1/lojas</li> 
+  <li>/apis/v1/lojas/{id_loja}</li>
+  <li>/apis/v1/lojas/{id_loja}/telefones</li>
+  <li>/apis/v1/lojas/{id_loja}/telefones/{id_telefone}</li>
+  <li>/apis/v1/lojas/{id_loja}/emails</li>
+  <li>/apis/v1/lojas/{id_loja}/emails/{id_email}</li>
+  <li>/apis/v1/lojas/{id_loja}/produtos</li>
+  <li>/apis/v1/lojas/{id_loja}/produtos/{id_produto}</li>
+  <li>/apis/v1/tokens</li>
 </ul>
 
 
