@@ -66,10 +66,11 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   </tr>
 </table>
 
+
 <h3>Release Description</h3>
  - Ver em milestone da Release 1.0.0
  
-<h3>Scripts Banco de dados</h3>
+<h3>Scripts Banco de dados</h3>]
 
 ```sql
 CREATE KEYSPACE beststore WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': '3'}  AND durable_writes = true;
@@ -83,7 +84,12 @@ CREATE TYPE beststore.atualizacao (
     instante_atualizacao timestamp
 );
 
-
+CREATE TYPE beststore.caixa (
+    id uuid,
+    numero int,
+    client_key uuid,
+    instante_criacao timestamp
+);
 
 CREATE TYPE beststore.email (
     id uuid,
@@ -92,8 +98,6 @@ CREATE TYPE beststore.email (
     instante_criacao timestamp,
     ultima_atualizacao timestamp
 );
-
-
 
 CREATE TYPE beststore.endereco (
     id uuid,
@@ -121,7 +125,53 @@ CREATE TYPE beststore.telefone (
     ultima_atualizacao timestamp
 );
 
+CREATE TABLE beststore.pessoas (
+    id_pessoa uuid,
+    id_perfil uuid,
+    cpf text,
+    data_nascimento date,
+    emails set<frozen<email>>,
+    enderecos set<frozen<endereco>>,
+    nome text,
+    sexo text,
+    tipo_pessoa text,
+    ultima_atualizacao timestamp,
+    PRIMARY KEY (id_pessoa, id_perfil)
+) WITH CLUSTERING ORDER BY (id_perfil ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
 
+CREATE TABLE beststore.permissoes (
+    id uuid PRIMARY KEY,
+    acesso text,
+    ativo boolean,
+    descricao text
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
 
 CREATE TABLE beststore.applications (
     client_id uuid PRIMARY KEY,
@@ -143,6 +193,29 @@ CREATE TABLE beststore.applications (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
+CREATE TABLE beststore.lojas (
+    id uuid PRIMARY KEY,
+    caixas set<frozen<caixa>>,
+    emails set<frozen<email>>,
+    endereco endereco,
+    instante_criacao timestamp,
+    nome text,
+    telefones set<frozen<telefone>>,
+    ultima_atualizacao timestamp
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
 
 CREATE TABLE beststore.produtos (
     idloja uuid,
@@ -176,15 +249,14 @@ CREATE TABLE beststore.produtos (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-
-CREATE TABLE beststore.lojas (
-    id uuid PRIMARY KEY,
-    emails set<frozen<email>>,
-    endereco endereco,
-    instante_criacao timestamp,
-    nome text,
-    telefones set<frozen<telefone>>,
-    ultima_atualizacao timestamp
+CREATE TABLE beststore.usuarios (
+    email text PRIMARY KEY,
+    ativo boolean,
+    id_loja uuid,
+    id_perfil uuid,
+    id_pessoa uuid,
+    permissoes set<uuid>,
+    senha text
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
     AND comment = ''
@@ -199,8 +271,6 @@ CREATE TABLE beststore.lojas (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-
-
 
 ```
 
