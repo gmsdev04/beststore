@@ -9,10 +9,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.br.gmsdev04</groupId>
-	<artifactId>SecurityTokenService</artifactId>
+	<artifactId>LOJAS_TELEFONES</artifactId>
 	<version>1.0.0</version>
-	<name>SecurityTokenService</name>
-	<description>Projeto destinado ao controle do fluxo e geração de Tokens</description>
+	<name>LOJAS_TELEFONES</name>
+	<description>Projeto destinado a manipulação de dados relacionados ao dominio funcional Lojas e sub dominio telefones.'</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -45,6 +45,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-cassandra</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 		<dependency>
