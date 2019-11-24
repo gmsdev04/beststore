@@ -1,6 +1,6 @@
 <h1>Iniciativa BestStore</h1>
 <p>
-Este projeto consiste na criação de um sistema de gestão de vendas e produtos gratuito com o intuito da obtenção de dados de valores de produtos e localização dos mesmos. </p>
+Este projeto consiste na criação de um sistema de gestão de vendas e produtos gratuito com o intuito da obtenção de dados de valores de produtos e localização dos mesmos. Obter uma rede social de busca de produtos e divulgações como um jornal virtual </p>
 
 <h2>Arquitetura</h2>
 A arquitetura do sistema é baseada em serviços, mais especificamente RestFull. O sistema deve ser composto por modulos apartados sendo eles :
@@ -18,16 +18,16 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
   <li>acessos</li>
   <li>vendas</li>
   <li>tokens</li>
+  <li>caixas</li>
 </ul>
 
 <h3>Rotas</h3>
 <ul>
-  <li>pessoas/v1/acessos</li>
-  <li>pessoas/v1/</li>
-  <li>lojas/v1/produtos</li>
-  <li>lojas/v1/vendas
-  <li>lojas/v1/</li>
-  <li>sts/v1/tokens</li>
+  <li>/apis/v1/lojas (POST)</li> 
+  <li>/apis/v1/lojas/{id_loja} (GET, PATCH)</li>
+  <li>/apis/v1/lojas/{id_loja}/produtos (GET, POST)</li>
+  <li>/apis/v1/lojas/{id_loja}/produtos/{id_produto} (GET, PATCH)</li>
+  <li>/apis/v1/tokens (POST)</li>
 </ul>
 
 
@@ -71,10 +71,19 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
  
 <h3>Scripts Banco de dados</h3>
 
-<h5>Keyspace Geral</h5>
+```sql
 CREATE KEYSPACE beststore WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': '3'}  AND durable_writes = true;
 
-<h5>Tabelas e UDTs</h5>
+CREATE TYPE beststore.atualizacao (
+    id uuid,
+    titulo text,
+    descricao text,
+    atualizador text,
+    alteracoes map<text, text>,
+    instante_atualizacao timestamp
+);
+
+
 
 CREATE TYPE beststore.email (
     id uuid,
@@ -83,6 +92,8 @@ CREATE TYPE beststore.email (
     instante_criacao timestamp,
     ultima_atualizacao timestamp
 );
+
+
 
 CREATE TYPE beststore.endereco (
     id uuid,
@@ -110,6 +121,8 @@ CREATE TYPE beststore.telefone (
     ultima_atualizacao timestamp
 );
 
+
+
 CREATE TABLE beststore.applications (
     client_id uuid PRIMARY KEY,
     ativo boolean,
@@ -129,6 +142,40 @@ CREATE TABLE beststore.applications (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
+
+
+CREATE TABLE beststore.produtos (
+    idloja uuid,
+    idproduto uuid,
+    ativo boolean,
+    atualizacoes set<frozen<atualizacao>>,
+    categoria uuid,
+    data_fabricacao date,
+    data_validade date,
+    descricao text,
+    fabricante uuid,
+    imagem blob,
+    instante_criacao timestamp,
+    nome text,
+    quantidade int,
+    valor double,
+    PRIMARY KEY (idloja, idproduto)
+) WITH CLUSTERING ORDER BY (idproduto ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
 
 CREATE TABLE beststore.lojas (
     id uuid PRIMARY KEY,
@@ -153,5 +200,8 @@ CREATE TABLE beststore.lojas (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
+
+
+```
 
 @Author gmsdev04
