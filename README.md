@@ -74,7 +74,7 @@ deverá ser desenvolvido um projeto apartado que manterá os micro serviços ope
 <h3>Release Description</h3>
  - Ver em milestone da Release 1.0.0
  
-<h3>Scripts Banco de dados</h3>]
+<h3>Scripts Cassandra </h3>
 
 ```sql
 CREATE KEYSPACE beststore WITH replication = {'class': 'NetworkTopologyStrategy', 'datacenter1': '3'}  AND durable_writes = true;
